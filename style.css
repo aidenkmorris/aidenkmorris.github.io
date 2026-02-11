@@ -29,6 +29,7 @@ footer {
     text-align: center;
     background-color: #002255;
     border-top: 3px solid #ccc;
+    opacity: 0;
 }
 
 main {
@@ -42,10 +43,14 @@ main {
     padding: 0px 20px;
     width: 80%;
     margin-bottom: 20px;
+    opacity: 0;
+    transition: margin-left 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .box:hover {
     background-color: #002255;
+    margin-left: 2%;
+    box-shadow: 0px 0px 5px #cccccc;
 }
 
 /* Mobile/narrow displays */
@@ -60,6 +65,7 @@ header {
     border-bottom: 3px solid #ccc;
     width: 100%;
     position: relative;
+    opacity: 0;
 }
 
 #headerMain {
@@ -71,7 +77,7 @@ header {
 #icons {
     position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -81,10 +87,17 @@ header {
     height: 50px;
     border: 3px solid #ccc;
     border-radius: 5px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.logo:hover {
+    box-shadow: 0px 0px 7px #cccccc;
+    transform: scale(1.08)
+    
 }
 
 /* Desktop/wider displays */
-@media (min-width: 800px) {
+@media (min-width: 850px) {
     #header {
         padding: 20px 160px 20px 20px;
     }
@@ -98,4 +111,87 @@ header {
         flex-direction: row;
         gap: 20px;
     }
+
+    .box:hover {
+        margin-left: 1%;
+    }
+}
+
+/* Animations */
+@keyframes SpawnInBox {
+    from {
+        opacity: 0;
+        transform: translate(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+.animateEducation {
+    animation-name: SpawnInBox;
+    animation-duration: 0.5s;
+    animation-delay: 0.20s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.animateInterests {
+    animation-name: SpawnInBox;
+    animation-duration: 0.5s;
+    animation-delay: .30s;
+    animation-fill-mode: forwards;
+}
+
+.animateSkills {
+    animation-name: SpawnInBox;
+    animation-duration: 0.5s;
+    animation-delay: .40s;
+    animation-fill-mode: forwards;
+}
+
+.animateCurrent {
+    animation-name: SpawnInBox;
+    animation-duration: 0.5s;
+    animation-delay: .50s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes SpawnInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.animateHeader {
+    animation-name: SpawnInHeader;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes SpawnInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.animateFooter {
+    animation-name: SpawnInFooter;
+    animation-duration: 0.75s;
+    animation-delay: 0.50s;
+    animation-fill-mode: forwards;
 }
