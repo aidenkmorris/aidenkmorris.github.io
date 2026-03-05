@@ -85,15 +85,11 @@ header {
 
 .logo {
     height: 50px;
-    border: 3px solid #ccc;
-    border-radius: 5px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .logo:hover {
-    box-shadow: 0px 0px 7px #cccccc;
-    transform: scale(1.08)
-    
+    transform: scale(1.08);
 }
 
 /* Desktop/wider displays */
